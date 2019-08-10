@@ -1,13 +1,13 @@
 import React from "react";
 import {HashRouter, Route, Switch} from "react-router-dom";
-import TodoForm from "./Components/TodoForm"
+import ToDoComponent from "./Components/ToDo";
 
 const App = () => {
     return (
       <HashRouter basename="/">
         <div className="App">
           <Switch>
-            <Route exact path="/" render={() => <TodoForm />}/>
+            <Route exact path="/" render={() => <ToDoComponent />}/>
           </Switch>
         </div>
       </HashRouter>

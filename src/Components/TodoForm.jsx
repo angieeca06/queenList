@@ -1,21 +1,19 @@
-import React, { useState } from "react";
-import {InputGroup , FormControl} from "react-bootstrap";
+import React from "react";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
-const useTodoForm = () => {
-
-  const [toDo, setToDo] = useState("");
-
-  const handleToDo = (e) => {
-    setToDo(e.target.value);
-  };
-  console.log(toDo)
-
+const useTodoForm = props => {
   return (
-    <InputGroup className="mb-3">
-      <FormControl aria-label="Text input with checkbox" type="text" onChange={handleToDo}/>
+    <InputGroup className="col-md-6 align-content-center mx-auto">
+      <FormControl
+        aria-label="Text input with checkbox"
+        type="text"
+        placeholder="What you have to do?"
+        onChange={props.handleToDo}
+        value= {props.toDo}
+      />
+      <Button variant="light" onClick={()=>{ props.addHomework(props.toDo) }}>Add</Button>
     </InputGroup>
   );
-
-}
+};
 
 export default useTodoForm;
